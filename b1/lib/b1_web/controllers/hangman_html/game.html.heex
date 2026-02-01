@@ -1,0 +1,30 @@
+<div id="game" class="grid grid-flow-col">
+    <div class="row-span-3">
+        <pre>
+            <%= figure_for(@tally.turns_left) %>
+        </pre>
+    </div>
+
+    <div class="row-span-3">
+        <p>
+            Turns left: <%= @tally.turns_left %>
+
+        </p>
+
+        <p>
+            Letters used: <%= Enum.join(@tally.used, ", " ) %>
+
+        </p>
+
+        <p>
+            Words so far: <%= Enum.join(@tally.letters, " " ) %>
+
+        </p>
+
+        <div>
+            <%= move_status(@tally.game_state) %>
+        </div>
+
+        <%= continue_or_try_again(@tally.game_state) %>
+    </div>
+</div>
